@@ -116,21 +116,15 @@ $eqLogics = eqLogic::byType('heliotrope');
 
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">{{Géolocalisation}}</label>
+                            <label class="col-sm-3 control-label">{{Latitude}}</label>
                             <div class="col-sm-3">
-                                <select class="form-control eqLogicAttr configuration" id="geoloc" data-l1key="configuration" data-l2key="geoloc">
-                                    <?php
-                                    if (class_exists('geotravCmd')) {
-                                        foreach (eqLogic::byType('geotrav') as $geoloc) {
-                                            if ($geoloc->getConfiguration('type') == 'location') {
-                                                echo '<option value="' . $geoloc->getId() . '">' . $geoloc->getName() . '</option>';
-                                            }
-                                        }
-                                    } else {
-                                        echo '<option value="">Pas de localisation disponible</option>';
-                                    }
-                                    ?>
-                                </select>
+                                <input class="form-control eqLogicAttr configuration" id="latitude" data-l1key="configuration" data-l2key="latitude" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">{{Longitude}}</label>
+                            <div class="col-sm-3">
+                                <input class="form-control eqLogicAttr configuration" id="longitude" data-l1key="configuration" data-l2key="longitude" />
                             </div>
                         </div>
 
